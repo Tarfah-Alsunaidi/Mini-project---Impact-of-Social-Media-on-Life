@@ -31,6 +31,11 @@ saved_link = ""
 if link_file.exists():
     saved_link = next((l.strip() for l in link_file.read_text(encoding="utf-8").splitlines()
                        if l.strip() and not l.strip().startswith("#")), "")
+if not saved_link:
+    try:
+        saved_link = str(st.secrets.get("class_sheet", "")).strip()
+    except Exception:
+        saved_link = ""
 csv_url = sheet_csv_url(saved_link)
 live = bool(csv_url)
 
