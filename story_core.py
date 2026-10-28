@@ -7,7 +7,7 @@ import pandas as pd
 ROOT = pathlib.Path(__file__).parent
 STATIC = ROOT / "static"
 LIVE_FILE = STATIC / "class.json"
-LIVE_URL = "/app/static/class.json"
+LIVE_URL = "app/static/class.json"
 
 
 def form_qr() -> str:
